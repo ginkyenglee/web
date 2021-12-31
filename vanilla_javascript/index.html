@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>vanila 1</title>
+    </head>
+    <body>
+        <form class="hidden" id="login-form">
+            <input required maxlength="15" type="text" placeholder="what is your name?"/>
+            <input type="submit" value ="Login"/>
+        </form>
+
+        <h1 class="hidden" id="user-name"></h1>
+        <h2 id="clock"></h2>
+        <div id="quote">
+            <span></span>
+            <span></span>
+        </div>
+
+        <form id="todo-form">
+            <input required type="text" placeholder="type what your todo"/>
+        </form>
+
+        <ol id="todo-list"></ol>
+        <div id="weather">
+            <span></span>
+            <span></span>
+        </div>
+
+        <script src="login.js"></script>
+        <script src="clock.js"></script>
+        <script src="quote.js"></script>
+        <script src="todo.js"></script>
+        <script src="weather.js"></script>
+    </body>
+</html>
