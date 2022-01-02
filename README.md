@@ -14,7 +14,7 @@
 - Asynchronous(동시에 일어나지 않음), 병렬적인 : fetch 라인이 실행될 때, 다른 것들도 병렬적으로 실행될 수 있음
 - response 객체가 응답으로 옴 (status : 200 --> 성공, 404 --> not found)
 
-```python
+```javascript
 function callbackme(){
 	console.log('response end')
 }
@@ -25,4 +25,10 @@ console.log(2);// Asynchronous이므로, fetch 요청 후 기다리는 동안 �
 # 1
 # 2
 # response end
+```
+
+- hash 를 활용한 북마크 : 주소를 통해, 사용자가 보던 화면을 나타내고 싶어함
+```javascript
+location.hash// 현재의 해쉬값
+<li><a href="#!html" onclick="contentsFetch('html')">html</a></li> // 관습적으로 #! 해쉬뱅을 활용하여 해쉬 구축
 ```
