@@ -13,6 +13,9 @@
 - 싱글페이지 어플리케이션 구현 가능
 - Asynchronous(동시에 일어나지 않음), 병렬적인 : fetch 라인이 실행될 때, 다른 것들도 병렬적으로 실행될 수 있음
 - response 객체가 응답으로 옴 (status : 200 --> 성공, 404 --> not found)
+- 브라우저에서의 호환성 탐색 : https://caniuse.com/?search=fetch 
+- Polyfill(fetch가 호환되지 않는 브라우저에서의 활용방법) : https://github.com/github/fetch
+
 
 _공통 : contents와 application을 구분하자. 파일 나누기가 중요_
 
