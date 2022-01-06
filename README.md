@@ -63,7 +63,7 @@ Patient.prototype.introduce = function(){
 Patient1 = new Patient("gin",160,55);
 Patient1.introduce() // gin : 160/55
 
-Patient2 = new Patient("ornrim),168,60);
+Patient2 = new Patient("ornrim"),168,60);
 Patient2.introduce = function(){
 	console.log("revisit needed");
 	}
