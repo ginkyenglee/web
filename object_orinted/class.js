@@ -10,11 +10,26 @@ class Person{
     }
 }
 
-const patient1 = new Person("gin",160,55);
-console.log(patient1.introduce());
+class Patient extends Person{
+    constructor(name, height, weight, disease, startDay){
+        super(name,height,weight);
+        this.disease = disease;
+        this.startDay = startDay;
+    }
+    introduce(){
+        return (`${super.introduce()} disease : ${this.disease}(${this.startDay}~)`);
+    }
+}
 
-const patient2 = new Person("ornrim",165,60);
-patient2.introduce = function(){
+const person1 = new Person("gin",160,55);
+console.log(person1.introduce());
+
+const person2 = new Person("ornrim",165,60);
+person2.introduce = function(){
     return ("revist needed!")
 }
-console.log(patient2.introduce());
+console.log(person2.introduce());
+
+const person3 = new Patient("qire",196,60,"cancer","20000101");
+
+console.log(person3.introduce());
