@@ -75,12 +75,22 @@ Patient2.introduce() // "revisit needed"
 ```
 
 - class : prototype을 활용해서도 객체 생성할 수 있지만, class 활용해서도 가능
+
   - constructor() 라는 이미 약속된 함수를 활용하여 초깃값 세팅
   - prototype 도 동일하게 활용가능하며, 클래스 내에 함수를 정의시 같은 효과
   - 필요할 때 개별 객체 별도 메소드 정의(해당 객체 함수 이미 정의되어있다면 객체 자체 함수활용, 아니면 공통 함수 활용)
 
+  - class inheritance(상속) : 상속은 생성된 class의 '메소드' 등의 기능을 유지하면서 새로운 기능을 추가하려고 할 때 활용
+
+    - 어떠한 함수 추가하고 싶을 때 :
+      1. 클래스 내에 함수 선언 : 다른 사람이 작성한 클래스를 활용할 때, 클래스 내부를 수정하면 업데이트가 안되는 경우가 생길 수 있음, 빈도가 적은 함수를 클래스안에 생성하는 것은 비효율적
+      2. 기존 클래스를 포함한 별개의 클래스 생성 : 중복 많음, 비효율적
+    - 상속 활용 시 : 중복 제거, 상속하고 있는 클래스 동시다발적 수정가능, 유지보수 쉬움
+
+  - super : 상속을 받게 됐을 때, 자식 클래스에서 부모 클래스의 요소를 활용하여 새로운 요소를 정의할 때, super 활용
+
 ```javascript
-class Patient {
+class Person {
   constructor(name, height, weight) {
     this.name = name;
     this.height = height;
@@ -92,6 +102,22 @@ class Patient {
   }
 }
 
-const patient1 = new Patient('gin', 160, 55);
-patient1.introduce();
+class Patient extends Person {
+  constructor(name, height, weight, disease, startDay) {
+    super(name, height, weight);
+    this.disease = disease;
+    this.startDay = startDay;
+  }
+  introduce() {
+    return `${super.introduce()} disease : ${this.disease}(${this.startDay}~)`;
+  }
+}
+
+const person = new Person('gin', 160, 55);
+person.introduce();
+// gin : 160 /55
+
+const patient = new Patient('gin2', 170, 55."cold","20201111");
+patient.introduce();
+// gin2 : 160/55 disease:cold(20201111~)
 ```
